@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "trt-mnist"
+version = "0.1.0"
+description = ""
+authors = ["Shogo Takata"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+tensorflow = {version = "^2.2.0", allow-prereleases = true, source = "nvidia"}
+
+[[tool.poetry.source]]
+name = "nvidia"
+url = "https://developer.download.nvidia.com/compute/redist/jp/v44"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.6.0"
+black = {version = "^19.10b0", allow-prereleases = true}
+
+[tool.poetry.scripts]
+train = "trt_mnist.train:main"
+inference = "trt_mnist.inference:main"
+inference_trt = "trt_mnist.inference_trt:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
