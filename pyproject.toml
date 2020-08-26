@@ -5,17 +5,17 @@ description = ""
 authors = ["Shogo Takata"]
 license = "MIT"
 
-[tool.poetry.dependencies]
-python = "^3.6"
-tensorflow = {version = "^2.2.0", allow-prereleases = true, source = "nvidia"}
-
 [[tool.poetry.source]]
 name = "nvidia"
 url = "https://developer.download.nvidia.com/compute/redist/jp/v44"
 
+[tool.poetry.dependencies]
+python = "^3.6"
+tensorflow = { version = "^2.2.0", allow-prereleases = true, source = "nvidia" }
+
 [tool.poetry.dev-dependencies]
 pylint = "^2.6.0"
-black = {version = "^19.10b0", allow-prereleases = true}
+black = { version = "^19.10b0", allow-prereleases = true }
 
 [tool.poetry.scripts]
 train = "trt_mnist.train:main"
